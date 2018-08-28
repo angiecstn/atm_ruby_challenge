@@ -36,13 +36,12 @@ describe Atm do
         subject.funds = 50
         expected_output = { status: false, message: 'insufficient funds in ATM', date: Date.today  }
         expect(subject.withdraw(100,'1234', account)).to eq expected_output
+    end
 
     it 'reject withdraw if card is expired' do
-        allow(account).to receive(:exp_date).and_return('12/15')
+        allow(account).to receive(:exp_date).and_return('04/17')
         expected_output = { status: false, message: 'card expired', date: Date.today }
         expect(subject.withdraw(6, '1234', account)).to eq expected_output
-    end
-    
     end
 end
 
