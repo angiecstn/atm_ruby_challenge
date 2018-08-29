@@ -25,8 +25,7 @@ class Atm
     private 
 
     def account_disabled?(account_status)
-        account_status = :active
-        # account_status = :actual_status
+        account_status != :active
     end 
     
     def incorrect_pin?(pin_code, actual_pin)
