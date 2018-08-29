@@ -16,6 +16,10 @@ describe Account do
         expect(subject.exp_date).to eq expected_date
     end
 
+    it 'is expected to have :active status on initialize' do
+    expect(subject.account_status).to eq :active
+    end
+
     # it 'is expected to have an owner' do
     # expect(subject.owner).to eq person
     # end
@@ -24,15 +28,10 @@ describe Account do
     # expect { described_class.new}.to raise_error 'An Account owner is required'
     # end
 
-
-    # it 'is expected to have :active status on initialize' do
-    # expect(subject.account_status).to eq :active
-    # end
-
-    # it 'deactivates account using Instance method' do
-    # subject.deactivate
-    # expect(subject.account_status).to eq :deactivated
-    # end
+    it 'deactivates account using Class method' do
+        Account.deactivate(subject)
+        expect(subject.account_status).to eq :deactivated
+      end
 end 
 
 
