@@ -3,7 +3,6 @@ class Account
     attr_accessor :exp_date
     attr_accessor :account_status
     attr_accessor :owner 
-    
     def initialize(attrs = {})
         @pin_code = rand(1000..9999)
         @account_status = :active
