@@ -9,10 +9,10 @@ describe Person do
     end
 
     it 'is expected to raise error if no name is set' do
-        expect { subject.account_name }.to raise_error(ArgumentError, 'Name required')
+        expect { described_class.new }.to raise_error 'Name required'
     end
 
     it 'is expected to have a :cash attribute with value of 0 on initialize' do
-        expect (subject.account).to_eq(0)
+        expect(subject.cash).to eq 0
     end
 end

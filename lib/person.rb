@@ -7,21 +7,22 @@ class Person
     def initialize(attrs = {})
         @name = person_name(attrs[:name])
         @account = nil
-        @cash = 0 
+        @cash = 0
     end
+end    
     
-    private
+private
      
     def person_name(obj)
-        name == nil ? undefined_name : name 
+        obj == nil ? undefined_name : @name = obj 
     end
 
     def undefined_name
-         raise ArgumentError, 'Name required'
+         raise "Name required"
     end
+
+
     
-     
-    
-end 
+
 
 
