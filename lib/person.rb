@@ -7,6 +7,7 @@ class Person
      attr_accessor :cash
      attr_accessor :account
      attr_accessor :date
+     
 
     def initialize(attrs = {})
         @name = person_name(attrs[:name])
