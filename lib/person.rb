@@ -1,4 +1,5 @@
 require './lib/account'
+require './lib/atm.rb'
 require 'date'
 
 class Person
@@ -25,8 +26,7 @@ class Person
     def withdraw(args = {})
         @account == nil ? missing_account : withdraw_funds(args)
     end
-end
- 
+
     private
     
     def deposit_funds(amount)
@@ -58,6 +58,14 @@ end
     def missing_account
         raise 'No account found'
     end
+
+    def missing_atm
+        raise 'An ATM is required'
+    end
+end
+
+
+
 
 
 
