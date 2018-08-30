@@ -20,10 +20,7 @@ class Person
          raise ArgumentError, 'Name required'
     end
     
-    # def cash_status 
-    #     @cash = 0 
-    #     end 
-    
+     
     
 end 
 
