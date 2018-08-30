@@ -34,6 +34,7 @@ describe Person do
     end
 
     describe 'can manage funds if an account has been created' do
+        
         let(:atm) { Atm.new }
         before { subject.create_account }
 
@@ -66,12 +67,12 @@ describe Person do
             expect(subject.cash).to be 100
         end
 
-        describe 'can not manage funds if no account has been created' do
-            it 'cannot deposit funds' do
-                expect { subject.deposit(100) }.to raise_error('No account present')
-            end
         end
 
+    describe 'can not manage funds if no account has been created' do
+        it 'cannot deposit funds' do
+            expect{ subject.deposit(100) }.to raise_error(RuntimeError, 'No account found')
+        end
     end
 end
 
