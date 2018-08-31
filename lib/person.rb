@@ -3,12 +3,8 @@ require './lib/atm.rb'
 require 'date'
 
 class Person
-     attr_accessor :name
-     attr_accessor :cash
-     attr_accessor :account
-     attr_accessor :date
-     
-
+     attr_accessor :name, :cash, :account, :date
+    
     def initialize(attrs = {})
         @name = person_name(attrs[:name])
         @account = nil
@@ -58,7 +54,7 @@ class Person
 
     def missing_account
         raise 'No account found'
-    end
+   end
 
     def missing_atm
         raise 'An ATM is required'
