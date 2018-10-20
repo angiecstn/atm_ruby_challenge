@@ -9,7 +9,10 @@ class Account
         @exp_date = set_expire_date(exp_date)
         set_owner(attrs[:owner])
         @balance = 0
+        @hello 
     end
+
+    
 
     private
 
